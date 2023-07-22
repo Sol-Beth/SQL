@@ -1,0 +1,55 @@
+/* Create table about the people and what they do here */
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER,
+    profession TEXT,
+    work TEXT);
+    
+
+INSERT INTO famous_people (name, profession, age, work) VALUES ("Andrew", 32, "Movie Star", "Gone with the Stillness");
+
+INSERT INTO famous_people (name, profession, age, work) VALUES ("Paul", 22, "Author", "Living She Wrote");
+
+INSERT INTO famous_people (name, profession, age, work) VALUES ("Candy", 90, "Singer", "Lolipop Is Life");
+
+INSERT INTO famous_people (name, profession, age, work) VALUES ("Krista", 62, "Movie Star", "Where Has The Time Gone?");
+
+INSERT INTO famous_people (name, profession, age, work) VALUES ("Paula", 23, "Comedian", "I didn't do it");
+
+INSERT INTO famous_people (name, profession, age, work) VALUES ("Poppi", 19, "Graphic Artist", "Bleakness");
+
+INSERT INTO famous_people (name, profession, age, work) VALUES ("Sami", 44, "Guitarist", "Alejandro"); 
+
+INSERT INTO famous_people (name, profession, age, work) VALUES ("Nina", 19, "Poet", "Oh no!");
+    
+    
+CREATE TABLE hobbies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    famous_people_id INTEGER,
+    hobby TEXT,
+    years_practiced INTEGER);
+    
+  INSERT INTO hobbies (hobby, years_practiced)
+    VALUES ("painting", 10); 
+     INSERT INTO hobbies (hobby, years_practiced)
+    VALUES ("drawing", 1); 
+    INSERT INTO hobbies (hobby, years_practiced)
+    VALUES ("playing cards", 22); 
+    INSERT INTO hobbies (hobby, years_practiced)
+    VALUES ("read", 30); 
+  INSERT INTO hobbies (hobby, years_practiced)
+    VALUES ("edit", 2); 
+    
+      INSERT INTO hobbies (hobby, years_practiced)
+    VALUES ("runninhg", 5); 
+      INSERT INTO hobbies (hobby, years_practiced)
+    VALUES ("dancing", 6); 
+      INSERT INTO hobbies (hobby, years_practiced)
+    VALUES ("people watching", 1); 
+    
+SELECT f.name, h.hobby
+FROM famous_people f
+JOIN hobbies h
+ON f.id = h.famous_people_id;
+
+
