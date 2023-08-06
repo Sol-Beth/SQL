@@ -35,6 +35,12 @@ FROM BIT_DB.spotifydata
 ORDER BY popularity desc
 LIMIT 10
 
-#Last, I determined who had the longest duration on a track.
-SELECT artist_name, track_name, MAX(distinct duration_ms)
+#Last, I determined the avg popularity, danceability, and energy by artist and track. 
+SELECT
+artist_name
+,track_name
+,avg(popularity)
+,avg(danceability)
+,avg(energy)
 FROM BIT_DB.spotifydata
+GROUP BY artist_name, track_name
